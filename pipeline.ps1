@@ -1,0 +1,8 @@
+#Get-Service    #(List of all servise)
+#(Get-Service).Count   #(Count of all services)
+#Get-Service | Select-Object -First 10  #(List out 1st 10 services)
+#Get-Service | Select-Object -Last 10    #(List out last 10 services)
+#$a = Get-Service  (store in a varible)
+#$a | Select-Object -Last 10 | Select-Object Status, Name   #($a varivle show only status and name object)
+#$a | Export-Csv .\test.csv -NoTypeInformation   #(file export )
+$a | Where-Object {$_.Status -eq 'Running'} | Select-Object -Last 10   #(show only last 10 running service )
